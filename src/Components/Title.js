@@ -3,7 +3,7 @@ export default function title(){
 
     return(
         <div className="title">
-            Title
+            <h1>To Do List </h1>
         </div>
     )
 }
