@@ -1,6 +1,6 @@
 import React from "react";
 import {db} from '../firebase'
-import { collection ,addDoc} from "firebase/firestore";
+import { collection ,addDoc,serverTimestamp} from "firebase/firestore";
 import { useState } from "react";
 export default function AddToDo(){
 const [title,setTitle]=useState("")
@@ -9,7 +9,7 @@ const handleSubmit=async(e) => {
 e.preventDefault();
 if(title !=""){
     await addDoc(collection(db,"todos"),{
-       title,completed:false
+       title,completed:false,time:serverTimestamp()
       });
       console.log(collection(db,"todos"))
      setTitle("");

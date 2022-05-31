@@ -1,15 +1,18 @@
 import React from "react";
 import {db} from '../firebase'
-import { collection ,connectFirestoreEmulator,getDocs} from "firebase/firestore";
+import { collection ,connectFirestoreEmulator,getDoc,getDocs, updateDoc,query,orderBy} from "firebase/firestore";
 import {useState,useEffect} from "react";
 import { doc, deleteDoc  ,onSnapshot} from "firebase/firestore";
+import { async } from "@firebase/util";
 export default function (){
   const colRef=collection(db,"todos")
 
   const [toDoL,setToDo] =useState([]);
-  const [t,setT]=useState(0);
+ const q=query(colRef,orderBy('time'))
+
+ 
   /*
-  useEffect(()=>{
+
    getDocs(colRef).then((snapshot)=>{
      snapshot.docs.forEach((doc)=>{
       setToDo(old=>[...old,{...doc.data(),id:doc.id}])
@@ -20,18 +23,24 @@ export default function (){
    })
   },[])
   */
-onSnapshot(colRef,(snapshot)=>{
+  useEffect(()=>{
+onSnapshot(q,(snapshot)=>{
   setToDo([]);
   snapshot.docs.forEach((doc)=>{
     setToDo(old=>[...old,{...doc.data(),id:doc.id}])
-   
    })
-})
+})},[])
 
  const handleDelete = (id) => {
-   deleteDoc(doc(db,"todos",id)).then(
-     setT(old=>old+1)
-   )
+   deleteDoc(doc(db,"todos",id)).then()
+  }
+  const handleCheck=(id,checked)=>{
+  
+    updateDoc(doc(db,"todos",id),{
+    
+      completed:!checked
+
+    })
   }
     return (
         <div className="todo">
@@ -44,6 +53,11 @@ onSnapshot(colRef,(snapshot)=>{
                    <button onClick={()=>handleDelete(doc.id)}>
                      delete
                    </button>
+                      
+                   <button  onClick={()=>handleCheck(doc.id,doc.completed)} className={["btnCheck",doc.completed?"not":"completed"].join(" ")}>
+                       check
+                   </button>
+                   
                    </div>
                )
              })

@@ -114,3 +114,10 @@ input:focus,
 button:focus {
   outline: none;
 }
+
+.completed{
+  color:red;
+}
+.not{
+  color:green;
+}
