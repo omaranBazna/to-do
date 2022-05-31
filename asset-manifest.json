@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/omaranbazna.github.io/to-do/static/css/main.622e2f19.css",
+    "main.js": "/omaranbazna.github.io/to-do/static/js/main.1dc5cc5d.js",
+    "static/js/787.c6a9a21d.chunk.js": "/omaranbazna.github.io/to-do/static/js/787.c6a9a21d.chunk.js",
+    "index.html": "/omaranbazna.github.io/to-do/index.html",
+    "main.622e2f19.css.map": "/omaranbazna.github.io/to-do/static/css/main.622e2f19.css.map",
+    "main.1dc5cc5d.js.map": "/omaranbazna.github.io/to-do/static/js/main.1dc5cc5d.js.map",
+    "787.c6a9a21d.chunk.js.map": "/omaranbazna.github.io/to-do/static/js/787.c6a9a21d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.622e2f19.css",
+    "static/js/main.1dc5cc5d.js"
+  ]
+}
