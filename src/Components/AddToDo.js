@@ -13,6 +13,7 @@ if(title !=""){
       });
       console.log(collection(db,"todos"))
      setTitle("");
+
 }
 }
 
