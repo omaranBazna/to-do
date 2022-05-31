@@ -3,7 +3,7 @@ export default function title(){
 
     return(
         <div className="title">
-            <h1>To Do List </h1>
+            <h1> الفكرة هذه للمتعة فقط...الهدف تأليف قصة بشكل جماعي أي كل شخص يكمل كتابة القصة  </h1>
         </div>
     )
 }

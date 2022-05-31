@@ -11,17 +11,17 @@ if(title !=""){
     await addDoc(collection(db,"todos"),{
        title,completed:false,time:serverTimestamp()
       });
-      console.log(collection(db,"todos"))
+   
      setTitle("");
 
 }
 }
 
 return(
-    <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Enter To Do..." value={title} onChange={(e)=>{setTitle(e.target.value)}}></input>
+    <form className="formE" onSubmit={handleSubmit}>
+      <textarea type="text" placeholder="...أدخل النص" value={title} onChange={(e)=>{setTitle(e.target.value)}} className="inputArea"></textarea>
       <div className="btn_container">
-          <button>add</button>
+          <button>اضافة النص</button>
       </div>
     </form>
 )

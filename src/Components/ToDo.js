@@ -44,12 +44,13 @@ onSnapshot(q,(snapshot)=>{
   }
     return (
         <div className="todo">
-         <div>
+         
            {
              toDoL.map((doc)=>{
                return(
                  <div className="item" key={doc.id}>
                    {doc.title}
+                   {/*
                    <button onClick={()=>handleDelete(doc.id)}>
                      delete
                    </button>
@@ -57,13 +58,13 @@ onSnapshot(q,(snapshot)=>{
                    <button  onClick={()=>handleCheck(doc.id,doc.completed)} className={["btnCheck",doc.completed?"not":"completed"].join(" ")}>
                        check
                    </button>
-                   
+               */}
                    </div>
                )
              })
            }
 
-         </div>
+         
 
 
         </div>
