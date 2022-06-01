@@ -114,7 +114,7 @@ button:focus {
   text-align: right;
   resize: none;
   margin:auto;
-  width:100%;
+  width:80%;
   height:30vh;
   font-size:15px;
 }
